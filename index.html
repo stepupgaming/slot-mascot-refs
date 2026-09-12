@@ -40,6 +40,13 @@
   .counts { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.5rem 0 0; }
   .counts span { background: #15191f; border: 1px solid #2a2f36; border-radius: 8px;
     padding: 0.35rem 0.65rem; font-size: 0.82rem; color: #c4c7cc; }
+  .downloads { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0 1rem 0.75rem; }
+  header .downloads { padding: 0; margin: 0.75rem 0 0.25rem; }
+  a.btn { color: #e8eaed; text-decoration: none; border: 1px solid #3d4a5c; background: #1a2330;
+    padding: 0.45rem 0.85rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600; }
+  a.btn:hover { border-color: #6b8bb3; background: #243044; color: #fff; }
+  a.btn.primary { background: #2a4a6e; border-color: #4a7ab0; }
+  a.btn.primary:hover { background: #355a82; }
 </style>
 </head>
 <body>
@@ -58,12 +65,20 @@
     <a href="#pragmatic">Pragmatic (87)</a>
     <a href="#stake">Stake Engine (13)</a>
   </nav>
+  <div class="downloads">
+    <a class="btn primary" download href="downloads/contact-sheets.zip">Download all contact sheets</a>
+    <a class="btn primary" download href="downloads/all-cutouts.zip">Download all cutouts (PNG)</a>
+    <a class="btn" download href="sheet-hacksaw.jpg">Hacksaw sheet</a>
+    <a class="btn" download href="sheet-pragmatic.jpg">Pragmatic sheet</a>
+    <a class="btn" download href="sheet-stake.jpg">Stake sheet</a>
+  </div>
 </header>
 <main>
 
   <section id="hacksaw">
     <h2>Hacksaw</h2>
     <p class="meta">66 cutouts · sheets: sheet-hacksaw.jpg (66)</p>
+    <div class="downloads"><a class="btn" download href="sheet-hacksaw.jpg">Download sheet-hacksaw.jpg</a></div>
     <div class="sheets">
       <a class="imgwrap" href="sheet-hacksaw.jpg" target="_blank" rel="noopener"><img src="sheet-hacksaw.jpg" alt="Hacksaw contact sheet (66 cells, 2090×2674)"/></a>
     </div>
@@ -75,6 +90,7 @@
   <section id="pragmatic">
     <h2>Pragmatic</h2>
     <p class="meta">87 cutouts · sheets: sheet-pragmatic.jpg (87)</p>
+    <div class="downloads"><a class="btn" download href="sheet-pragmatic.jpg">Download sheet-pragmatic.jpg</a></div>
     <div class="sheets">
       <a class="imgwrap" href="sheet-pragmatic.jpg" target="_blank" rel="noopener"><img src="sheet-pragmatic.jpg" alt="Pragmatic contact sheet (87 cells, 2090×3266)"/></a>
     </div>
@@ -86,6 +102,7 @@
   <section id="stake">
     <h2>Stake Engine</h2>
     <p class="meta">13 cutouts · sheets: sheet-stake.jpg (13)</p>
+    <div class="downloads"><a class="btn" download href="sheet-stake.jpg">Download sheet-stake.jpg</a></div>
     <div class="sheets">
       <a class="imgwrap" href="sheet-stake.jpg" target="_blank" rel="noopener"><img src="sheet-stake.jpg" alt="Stake Engine contact sheet (13 cells, 2090×602)"/></a>
     </div>
@@ -95,6 +112,6 @@
     </div>
   </section>
 </main>
-<footer>Click a contact sheet for full size. Thumbs are JPEG ≤180px tall. Source cutouts: characters-only/*__char.png</footer>
+<footer>Use the download buttons for contact sheets or the full PNG pack. Click a sheet for full size. Thumbs are JPEG ≤180px tall.</footer>
 </body>
 </html>
