@@ -1,7 +1,7 @@
 # Slot character cutouts
 
-Assembled in-game character cutouts for style reference (Hacksaw / Pragmatic / Stake Engine).
+Assembled in-game character cutouts (Hacksaw / Pragmatic / Stake Engine).
 
-No lobby tiles. No Spine atlas sheets. Non-mascot junk quarantined.
+Junk (UI, props, full frames) quarantined. Stake is thin until real cutouts land.
 
-Gallery: https://stepupgaming.github.io/slot-mascot-refs/
+https://stepupgaming.github.io/slot-mascot-refs/
