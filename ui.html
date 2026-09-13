@@ -3,303 +3,45 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Slot UI by Stake Engine provider</title>
+<title>Stake Engine — Slot UI by provider</title>
 <style>
   :root { color-scheme: dark; }
-  body { margin: 0; font-family: system-ui, sans-serif; background: #0b0d10; color: #e8eaed; }
-  header { padding: 1.25rem 1.5rem 0.5rem; max-width: 1400px; margin: 0 auto; }
-  h1 { font-size: 1.35rem; margin: 0 0 0.35rem; font-weight: 650; }
-  p { margin: 0 0 1rem; color: #9aa0a6; line-height: 1.45; max-width: 75ch; }
-  nav { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.75rem 0 1.25rem; }
-  nav a { color: #c4c7cc; text-decoration: none; border: 1px solid #2a2f36; background: #15191f;
-    padding: 0.4rem 0.7rem; border-radius: 999px; font-size: 0.85rem; }
-  nav a:hover, nav a.active { border-color: #5b6b7c; color: #fff; }
-  .counts { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.5rem 0 0; }
-  .counts span { background: #15191f; border: 1px solid #2a2f36; border-radius: 8px;
-    padding: 0.35rem 0.65rem; font-size: 0.82rem; color: #c4c7cc; }
-  .downloads { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.75rem 0 0.25rem; }
-  a.btn { color: #e8eaed; text-decoration: none; border: 1px solid #3d4a5c; background: #1a2330;
-    padding: 0.45rem 0.85rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600; }
-  a.btn:hover { border-color: #6b8bb3; background: #243044; color: #fff; }
-  a.btn.primary { background: #2a4a6e; border-color: #4a7ab0; }
-  main { max-width: 1400px; margin: 0 auto; padding: 0 1.5rem 3rem; }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 1rem;
-  }
-  .card { background: #12151a; border: 1px solid #222831; border-radius: 14px; overflow: hidden; }
-  .card .imgwrap { display: block; border-bottom: 1px solid #222831; background: #000; }
-  .card img { display: block; width: 100%; height: auto; }
-  .card h3 { margin: 0.7rem 0.85rem 0.15rem; font-size: 1rem; }
-  .card .game { margin: 0 0.85rem 0.55rem; color: #9aa0a6; font-size: 0.85rem; }
-  .card .note { margin: 0 0.85rem 0.85rem; color: #6b7280; font-size: 0.72rem; line-height: 1.35; }
-  section.miss { margin-top: 2rem; background: #12151a; border: 1px solid #222831; border-radius: 14px; padding: 1rem 1.25rem; }
-  section.miss h2 { margin: 0 0 0.5rem; font-size: 1rem; }
-  section.miss ul { margin: 0; padding-left: 1.2rem; color: #9aa0a6; font-size: 0.85rem; line-height: 1.5; }
-  footer { max-width: 1400px; margin: 0 auto; padding: 0 1.5rem 2.5rem; color: #6b7280; font-size: 0.8rem; }
+  body { margin:0; font-family:system-ui,sans-serif; background:#0b0d10; color:#e8eaed; }
+  header { padding:1.25rem 1.5rem; max-width:1400px; margin:0 auto; }
+  h1 { font-size:1.35rem; margin:0 0 .35rem; }
+  p { color:#9aa0a6; max-width:70ch; line-height:1.45; }
+  .warn { background:#3a2010; border:1px solid #8a4b20; color:#ffd7b0; padding:.75rem 1rem; border-radius:10px; }
+  nav a { color:#c4c7cc; margin-right:.75rem; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:1rem; padding:0 1.5rem 3rem; max-width:1400px; margin:0 auto; }
+  .card { margin:0; background:#12151a; border:1px solid #222831; border-radius:12px; overflow:hidden; }
+  .card img { display:block; width:100%; height:auto; background:#000; }
+  figcaption { padding:.75rem 1rem 1rem; font-size:.85rem; color:#c4c7cc; }
+  .ok { color:#7dcea0; font-size:.75rem; }
+  a.btn { display:inline-block; margin:.5rem .5rem 0 0; padding:.45rem .85rem; border-radius:8px; background:#1a2330; border:1px solid #3d4a5c; color:#e8eaed; text-decoration:none; font-weight:600; font-size:.85rem; }
 </style>
 </head>
 <body>
 <header>
-  <h1>Slot UI by Stake Engine provider</h1>
-  <p>One in-game slot UI frame per studio (from the top-200 turnover cohort). Prefer Bet Replay / live frames showing reels + chrome. Additive to the character cutouts gallery — does not replace it.</p>
-  <div class="counts">
-    <span>Shown: 29 / 50 studios</span>
-    <span>From existing replays: 24</span>
-    <span>New captures: 5</span>
-    <span>Still missing: 21</span>
-  </div>
-  <nav>
-    <a href="index.html">Character cutouts</a>
-    <a class="active" href="ui.html">Slot UI by provider</a>
-  </nav>
-  <div class="downloads">
-    <a class="btn primary" download href="downloads/slot-ui-by-provider.zip">Download UI screenshots (ZIP)</a>
-  </div>
+  <nav><a href="index.html">← Character cutouts</a></nav>
+  <h1>Stake Engine — Slot UI by provider</h1>
+  <p>One base-game UI shot per studio (reels + bet/spin controls). Free-spin splash and Bet Replay START modals are rejected.</p>
+  <p class="warn"><strong>Audit in progress.</strong> Visually checked all previous 29 shots: only 2 passed. Recapturing the rest with Start clicked and base UI visible. Do not treat this page as complete yet.</p>
+  <p>Showing <strong>2</strong> verified PASS shots.</p>
 </header>
-<main>
-  <div class="grid">
-    
-    <article class="card">
-      <a class="imgwrap" href="ui/ui__valkyrie__waylanders-forge.jpg" target="_blank" rel="noopener">
-        <img loading="lazy" src="ui/ui__valkyrie__waylanders-forge.jpg" alt="Valkyrie — Waylanders Forge"/>
-      </a>
-      <h3>Valkyrie</h3>
-      <p class="game">Waylanders Forge</p>
-      
-    </article>
-    <article class="card">
-      <a class="imgwrap" href="ui/ui__paperclip-gaming__candy-dash.jpg" target="_blank" rel="noopener">
-        <img loading="lazy" src="ui/ui__paperclip-gaming__candy-dash.jpg" alt="Paperclip Gaming — Bluebeards Ghost"/>
-      </a>
-      <h3>Paperclip Gaming</h3>
-      <p class="game">Bluebeards Ghost</p>
-      <p class="note">UI from same-studio game: bluebeards-ghost (picked candy-dash had no dedicated replay)</p>
-    </article>
-    <article class="card">
-      <a class="imgwrap" href="ui/ui__donut-gaming__ganja-snail.jpg" target="_blank" rel="noopener">
-        <img loading="lazy" src="ui/ui__donut-gaming__ganja-snail.jpg" alt="Donut Gaming — Cattle Clash"/>
-      </a>
-      <h3>Donut Gaming</h3>
-      <p class="game">Cattle Clash</p>
-      <p class="note">UI from same-studio game: cattle-clash (picked ganja-snail had no dedicated replay)</p>
-    </article>
-    <article class="card">
-      <a class="imgwrap" href="ui/ui__colorful-play__graffiti-ways.jpg" target="_blank" rel="noopener">
-        <img loading="lazy" src="ui/ui__colorful-play__graffiti-ways.jpg" alt="Colorful Play — Bazooka Knight"/>
-      </a>
-      <h3>Colorful Play</h3>
-      <p class="game">Bazooka Knight</p>
-      <p class="note">UI from same-studio game: bazooka-knight (picked graffiti-ways had no dedicated replay)</p>
-    </article>
-    <article class="card">
-      <a class="imgwrap" href="ui/ui__crimsonclover__luck-engine.jpg" target="_blank" rel="noopener">
-        <img loading="lazy" src="ui/ui__crimsonclover__luck-engine.jpg" alt="CrimsonClover — Luck Engine"/>
-      </a>
-      <h3>CrimsonClover</h3>
-      <p class="game">Luck Engine</p>
-      
-    </article>
-    <article class="card">
-      <a class="imgwrap" href="ui/ui__twist-gaming__welcome-to-miami.jpg" target="_blank" rel="noopener">
-        <img loading="lazy" src="ui/ui__twist-gaming__welcome-to-miami.jpg" alt="Twist Gaming — 37 Boom"/>
-      </a>
-      <h3>Twist Gaming</h3>
-      <p class="game">37 Boom</p>
-      <p class="note">UI from same-studio game: 37-boom (picked welcome-to-miami had no dedicated replay)</p>
-    </article>
-    <article class="card">
-      <a class="imgwrap" href="ui/ui__black-coffee-studios__the-kraken.jpg" target="_blank" rel="noopener">
-        <img loading="lazy" src="ui/ui__black-coffee-studios__the-kraken.jpg" alt="Black Coffee Studios — The Kraken"/>
-      </a>
-      <h3>Black Coffee Studios</h3>
-      <p class="game">The Kraken</p>
-      
-    </article>
-    <article class="card">
-      <a class="imgwrap" href="ui/ui__terminal-games__geeked.jpg" target="_blank" rel="noopener">
-        <img loading="lazy" src="ui/ui__terminal-games__geeked.jpg" alt="Terminal Games — Motherclucker"/>
-      </a>
-      <h3>Terminal Games</h3>
-      <p class="game">Motherclucker</p>
-      <p class="note">UI from same-studio game: motherclucker (picked geeked had no dedicated replay)</p>
-    </article>
-    <article class="card">
-      <a class="imgwrap" href="ui/ui__degen-lab__keno-xtreme.jpg" target="_blank" rel="noopener">
-        <img loading="lazy" src="ui/ui__degen-lab__keno-xtreme.jpg" alt="Degen Lab — Cyber Ronin"/>
-      </a>
-      <h3>Degen Lab</h3>
-      <p class="game">Cyber Ronin</p>
-      <p class="note">UI from same-studio game: cyber-ronin (picked keno-xtreme had no dedicated replay)</p>
-    </article>
-    <article class="card">
-      <a class="imgwrap" href="ui/ui__titan-gaming__dojo-duel-2.jpg" target="_blank" rel="noopener">
-        <img loading="lazy" src="ui/ui__titan-gaming__dojo-duel-2.jpg" alt="Titan Gaming — Airstrike 2"/>
-      </a>
-      <h3>Titan Gaming</h3>
-      <p class="game">Airstrike 2</p>
-      <p class="note">UI from same-studio game: airstrike-2 (picked dojo-duel-2 had no dedicated replay)</p>
-    </article>
-    <article class="card">
-      <a class="imgwrap" href="ui/ui__creative-city__chocolate-98.jpg" target="_blank" rel="noopener">
-        <img loading="lazy" src="ui/ui__creative-city__chocolate-98.jpg" alt="Creative City — Axe Fight Boosted Rtp"/>
-      </a>
-      <h3>Creative City</h3>
-      <p class="game">Axe Fight Boosted Rtp</p>
-      <p class="note">UI from same-studio game: axe-fight-boosted-rtp (picked chocolate-98 had no dedicated replay)</p>
-    </article>
-    <article class="card">
-      <a class="imgwrap" href="ui/ui__phantom-interactive__rats-to-riches.jpg" target="_blank" rel="noopener">
-        <img loading="lazy" src="ui/ui__phantom-interactive__rats-to-riches.jpg" alt="Phantom Interactive — Anubis Clusters"/>
-      </a>
-      <h3>Phantom Interactive</h3>
-      <p class="game">Anubis Clusters</p>
-      <p class="note">UI from same-studio game: anubis-clusters (picked rats-to-riches had no dedicated replay)</p>
-    </article>
-    <article class="card">
-      <a class="imgwrap" href="ui/ui__pocket-play__octo-shop.jpg" target="_blank" rel="noopener">
-        <img loading="lazy" src="ui/ui__pocket-play__octo-shop.jpg" alt="Pocket Play — Battle Sharks"/>
-      </a>
-      <h3>Pocket Play</h3>
-      <p class="game">Battle Sharks</p>
-      <p class="note">UI from same-studio game: battle-sharks (picked octo-shop had no dedicated replay)</p>
-    </article>
-    <article class="card">
-      <a class="imgwrap" href="ui/ui__uppercut-gaming__the-golem.jpg" target="_blank" rel="noopener">
-        <img loading="lazy" src="ui/ui__uppercut-gaming__the-golem.jpg" alt="Uppercut Gaming — Big Boom"/>
-      </a>
-      <h3>Uppercut Gaming</h3>
-      <p class="game">Big Boom</p>
-      <p class="note">UI from same-studio game: big-boom (picked the-golem had no dedicated replay)</p>
-    </article>
-    <article class="card">
-      <a class="imgwrap" href="ui/ui__partyhat-play__splat.jpg" target="_blank" rel="noopener">
-        <img loading="lazy" src="ui/ui__partyhat-play__splat.jpg" alt="Partyhat Play — Splat"/>
-      </a>
-      <h3>Partyhat Play</h3>
-      <p class="game">Splat</p>
-      
-    </article>
-    <article class="card">
-      <a class="imgwrap" href="ui/ui__sidequest-studios__orbs-of-olympus.jpg" target="_blank" rel="noopener">
-        <img loading="lazy" src="ui/ui__sidequest-studios__orbs-of-olympus.jpg" alt="Sidequest Studios — Orbs Of Olympus"/>
-      </a>
-      <h3>Sidequest Studios</h3>
-      <p class="game">Orbs Of Olympus</p>
-      
-    </article>
-    <article class="card">
-      <a class="imgwrap" href="ui/ui__epicslots__undead-outlaw.jpg" target="_blank" rel="noopener">
-        <img loading="lazy" src="ui/ui__epicslots__undead-outlaw.jpg" alt="EpicSlots — Undead Outlaw"/>
-      </a>
-      <h3>EpicSlots</h3>
-      <p class="game">Undead Outlaw</p>
-      
-    </article>
-    <article class="card">
-      <a class="imgwrap" href="ui/ui__giga__sword-drop.jpg" target="_blank" rel="noopener">
-        <img loading="lazy" src="ui/ui__giga__sword-drop.jpg" alt="GIGA — Galactic Warrior"/>
-      </a>
-      <h3>GIGA</h3>
-      <p class="game">Galactic Warrior</p>
-      <p class="note">Captured frame; shown title: Galactic Warrior</p>
-    </article>
-    <article class="card">
-      <a class="imgwrap" href="ui/ui__gg-gaming__wrath-of-zeus.jpg" target="_blank" rel="noopener">
-        <img loading="lazy" src="ui/ui__gg-gaming__wrath-of-zeus.jpg" alt="GG Gaming — Deadly Outlaw"/>
-      </a>
-      <h3>GG Gaming</h3>
-      <p class="game">Deadly Outlaw</p>
-      <p class="note">UI from same-studio game: deadly-outlaw (picked wrath-of-zeus had no dedicated replay)</p>
-    </article>
-    <article class="card">
-      <a class="imgwrap" href="ui/ui__nocap-labs__sewer-shellbacks.jpg" target="_blank" rel="noopener">
-        <img loading="lazy" src="ui/ui__nocap-labs__sewer-shellbacks.jpg" alt="NOCAP LABS — Grimm"/>
-      </a>
-      <h3>NOCAP LABS</h3>
-      <p class="game">Grimm</p>
-      <p class="note">UI from same-studio game: grimm (picked sewer-shellbacks had no dedicated replay)</p>
-    </article>
-    <article class="card">
-      <a class="imgwrap" href="ui/ui__very-rare__bone-circus.jpg" target="_blank" rel="noopener">
-        <img loading="lazy" src="ui/ui__very-rare__bone-circus.jpg" alt="Very Rare — Bone Circus"/>
-      </a>
-      <h3>Very Rare</h3>
-      <p class="game">Bone Circus</p>
-      
-    </article>
-    <article class="card">
-      <a class="imgwrap" href="ui/ui__parowdee__da-hacker.jpg" target="_blank" rel="noopener">
-        <img loading="lazy" src="ui/ui__parowdee__da-hacker.jpg" alt="Parowdee — Da Hacker / Le Hacker"/>
-      </a>
-      <h3>Parowdee</h3>
-      <p class="game">Da Hacker / Le Hacker</p>
-      
-    </article>
-    <article class="card">
-      <a class="imgwrap" href="ui/ui__madlab-gaming__noire-city.jpg" target="_blank" rel="noopener">
-        <img loading="lazy" src="ui/ui__madlab-gaming__noire-city.jpg" alt="MadLab Gaming — Candy Queen"/>
-      </a>
-      <h3>MadLab Gaming</h3>
-      <p class="game">Candy Queen</p>
-      <p class="note">UI from same-studio game: candy-queen (picked noire-city had no dedicated replay)</p>
-    </article>
-    <article class="card">
-      <a class="imgwrap" href="ui/ui__axisframe-gaming__luxury-chad.jpg" target="_blank" rel="noopener">
-        <img loading="lazy" src="ui/ui__axisframe-gaming__luxury-chad.jpg" alt="AxisFrame Gaming — Anime Yakuza"/>
-      </a>
-      <h3>AxisFrame Gaming</h3>
-      <p class="game">Anime Yakuza</p>
-      <p class="note">UI from same-studio game: anime-yakuza (picked luxury-chad had no dedicated replay)</p>
-    </article>
-    <article class="card">
+<main class="grid">
+
+    <figure class="card">
       <a class="imgwrap" href="ui/ui__obscure-studio__fat-eddie.jpg" target="_blank" rel="noopener">
         <img loading="lazy" src="ui/ui__obscure-studio__fat-eddie.jpg" alt="Obscure Studio — Fat Eddie"/>
       </a>
-      <h3>Obscure Studio</h3>
-      <p class="game">Fat Eddie</p>
-      
-    </article>
-    <article class="card">
-      <a class="imgwrap" href="ui/ui__hifive-gaming__super-high-buddy.jpg" target="_blank" rel="noopener">
-        <img loading="lazy" src="ui/ui__hifive-gaming__super-high-buddy.jpg" alt="HiFive Gaming — Assassins Ritual"/>
+      <figcaption><strong>Obscure Studio</strong><br/>Fat Eddie<br/><span class="ok">PASS · base UI</span></figcaption>
+    </figure>
+    <figure class="card">
+      <a class="imgwrap" href="ui/ui__very-rare__bone-circus.jpg" target="_blank" rel="noopener">
+        <img loading="lazy" src="ui/ui__very-rare__bone-circus.jpg" alt="Very Rare — Bone Circus"/>
       </a>
-      <h3>HiFive Gaming</h3>
-      <p class="game">Assassins Ritual</p>
-      <p class="note">UI from same-studio game: assassins-ritual (picked super-high-buddy had no dedicated replay)</p>
-    </article>
-    <article class="card">
-      <a class="imgwrap" href="ui/ui__golos-games__knight-wild-rage.jpg" target="_blank" rel="noopener">
-        <img loading="lazy" src="ui/ui__golos-games__knight-wild-rage.jpg" alt="Golos Games — Dragon Ball World Cup"/>
-      </a>
-      <h3>Golos Games</h3>
-      <p class="game">Dragon Ball World Cup</p>
-      <p class="note">UI from same-studio game: dragon-ball-world-cup (picked knight-wild-rage had no dedicated replay)</p>
-    </article>
-    <article class="card">
-      <a class="imgwrap" href="ui/ui__incredible-gaming__mob-money.jpg" target="_blank" rel="noopener">
-        <img loading="lazy" src="ui/ui__incredible-gaming__mob-money.jpg" alt="Incredible Gaming — Bear Dash"/>
-      </a>
-      <h3>Incredible Gaming</h3>
-      <p class="game">Bear Dash</p>
-      <p class="note">UI from same-studio game: bear-dash (picked mob-money had no dedicated replay)</p>
-    </article>
-    <article class="card">
-      <a class="imgwrap" href="ui/ui__evil-eddie-and-the-riggers__evil-eddie-s-vip-trainer.jpg" target="_blank" rel="noopener">
-        <img loading="lazy" src="ui/ui__evil-eddie-and-the-riggers__evil-eddie-s-vip-trainer.jpg" alt="Evil Eddie and the Riggers — Bossman Goes To India"/>
-      </a>
-      <h3>Evil Eddie and the Riggers</h3>
-      <p class="game">Bossman Goes To India</p>
-      <p class="note">UI from same-studio game: bossman-goes-to-india (picked evil-eddie-s-vip-trainer had no dedicated replay)</p>
-    </article>
-  </div>
-  <section class="miss">
-    <h2>Still missing (21)</h2>
-    <p style="margin:0 0 0.5rem">No usable in-game UI frame yet (max-win UUID missing and/or live demo blocked).</p>
-    <ul><li><strong>Meta Gaming</strong> — Mushroom Madness: Live demo loads with CONNECTION_FAILED (missing rgs_url/sessionID); max-win UUID unavailable</li><li><strong>Massive Studios</strong> — Roosters 3: Not in verifier catalog under roosters-3; no max-win UUID; no live path found</li><li><strong>Glass Cannon</strong> — Skull Gates: Live demo Failed to fetch; max-win UUID unavailable</li><li><strong>Coreffect Interactive</strong> — Angry Balls: max-win UUID unavailable; live host 403/405</li><li><strong>LK7.com</strong> — Plinko 100000: Duplicate of lk7 Plinko; max-win UUID unavailable</li><li><strong>Daedalus</strong> — Dead Canyon: Live demo Failed to fetch; max-win UUID unavailable</li><li><strong>Hyper Play</strong> — Maelstrom: Live demo Failed to fetch; max-win UUID unavailable</li><li><strong>Evoslot </strong> — Nuclear Bombs: max-win UUID unavailable; live host 403</li><li><strong>Ornate Square</strong> — SPINSHOT: Live demo sessionID error; max-win UUID unavailable</li><li><strong>Maverick Studios</strong> — Necro Punks: max-win UUID unavailable; live host 403</li><li><strong>LK7</strong> — Plinko 100000: max-win UUID unavailable; live host 403</li><li><strong>Mirror Image Gaming</strong> — Drop the Boss 2: Maralago: Live demo stuck on disclaimer; max-win UUID unavailable</li><li><strong>Yosip Gaming</strong> — Ninja Piggies: Live demo Failed to fetch</li><li><strong>Knucklehead Syndicate</strong> — Fruit Case: Not in verifier catalog; no max-win</li><li><strong>Sunnie Gaming</strong> — Sol Phoenix: max-win UUID unavailable; live host 403</li><li><strong>Shadduction</strong> — Honey Kingdom: max-win UUID unavailable; live host 403</li><li><strong>Scatterbrain Games</strong> — Hellshot: Live demo error overlay</li><li><strong>Primal Studios</strong> — Rise of Agartha: Live demo Failed to fetch (UI chrome visible but splash+error — excluded)</li><li><strong>IGNITE PLAY</strong> — Big Catch Kitty: max-win UUID unavailable; no live path</li><li><strong>Minty Fresh</strong> — Resort Rage: max-win UUID unavailable; live host 405</li><li><strong>Inverse Gaming</strong> — Warhound: Live demo tiny/blank capture</li></ul>
-  </section>
+      <figcaption><strong>Very Rare</strong><br/>Bone Circus<br/><span class="ok">PASS · base UI</span></figcaption>
+    </figure>
 </main>
-<footer>Style-reference screenshots only. Sources: existing Stake Engine Bet Replay frames + limited live/demo captures.</footer>
 </body>
 </html>
