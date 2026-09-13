@@ -9,38 +9,85 @@
   body { margin:0; font-family:system-ui,sans-serif; background:#0b0d10; color:#e8eaed; }
   header { padding:1.25rem 1.5rem; max-width:1400px; margin:0 auto; }
   h1 { font-size:1.35rem; margin:0 0 .35rem; }
-  p { color:#9aa0a6; max-width:70ch; line-height:1.45; }
-  .warn { background:#3a2010; border:1px solid #8a4b20; color:#ffd7b0; padding:.75rem 1rem; border-radius:10px; margin:1rem 0; }
-  nav a { color:#c4c7cc; margin-right:.75rem; }
-  .downloads { display:flex; flex-wrap:wrap; gap:.5rem; margin:1rem 0; }
-  a.btn { color:#e8eaed; text-decoration:none; border:1px solid #3d4a5c; background:#1a2330;
-    padding:.55rem 1rem; border-radius:8px; font-size:.9rem; font-weight:650; }
-  a.btn.primary { background:#2a6a3a; border-color:#3d9a55; font-size:1rem; padding:.7rem 1.2rem; }
-  a.btn.primary:hover { background:#348a46; }
-  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:1rem; padding:0 1.5rem 3rem; max-width:1400px; margin:0 auto; }
+  p { color:#9aa0a6; max-width:72ch; line-height:1.45; margin:0 0 .75rem; }
+  nav { margin:0 0 1rem; }
+  nav a { color:#c4c7cc; margin-right:.75rem; text-decoration:none; }
+  nav a.active { color:#fff; }
+  .downloads { display:flex; flex-wrap:wrap; gap:.65rem; margin:1rem 0 1.25rem; align-items:center; }
+  a.btn { display:inline-block; padding:.7rem 1.15rem; border-radius:10px; background:#1a2330;
+    border:1px solid #3d4a5c; color:#e8eaed; text-decoration:none; font-weight:650; font-size:.95rem; }
+  a.btn.primary { background:#1f6feb; border-color:#58a6ff; color:#fff; font-size:1.05rem; padding:.85rem 1.35rem; }
+  a.btn.primary:hover { background:#388bfd; }
+  .counts span { display:inline-block; background:#15191f; border:1px solid #2a2f36; border-radius:8px;
+    padding:.35rem .65rem; font-size:.82rem; color:#c4c7cc; margin:0 .35rem .35rem 0; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:1rem;
+    padding:0 1.5rem 2rem; max-width:1400px; margin:0 auto; }
   .card { margin:0; background:#12151a; border:1px solid #222831; border-radius:12px; overflow:hidden; }
   .card img { display:block; width:100%; height:auto; background:#000; }
   figcaption { padding:.75rem 1rem 1rem; font-size:.85rem; color:#c4c7cc; }
+  .ok { color:#7dcea0; font-size:.75rem; }
+  section.miss { max-width:1400px; margin:0 auto 2.5rem; padding:0 1.5rem; }
+  section.miss .box { background:#12151a; border:1px solid #222831; border-radius:12px; padding:1rem 1.2rem; }
+  section.miss h2 { margin:0 0 .4rem; font-size:1rem; }
+  section.miss p { margin:0; }
+  footer { max-width:1400px; margin:0 auto; padding:0 1.5rem 2.5rem; color:#6b7280; font-size:.8rem; }
 </style>
 </head>
 <body>
 <header>
-  <nav><a href="index.html">← Character cutouts</a></nav>
+  <nav>
+    <a href="index.html">Character cutouts</a>
+    <a class="active" href="ui.html">Slot UI by provider</a>
+  </nav>
   <h1>Stake Engine — Slot UI by provider</h1>
-  <p>Base-game UI only (reels + spin/bet/balance). Free-spin splash and Bet Replay START modals are rejected.</p>
+  <p>One <strong>base-game</strong> UI shot per studio (reels + bet/spin/balance). Free-spin splash and Bet Replay START modals are rejected. More studios added as verified.</p>
   <div class="downloads">
-    <a class="btn primary" download href="downloads/slot-ui-by-provider.zip">Download all UI screenshots (2)</a>
+    <a class="btn primary" download href="downloads/slot-ui-by-provider.zip">Download all UI screenshots (ZIP · 5 PASS)</a>
   </div>
-  <p class="warn">Still recapturing more studios. Only 2 verified clean shots in the zip right now — more will land in the same download as they pass.</p>
+  <div class="counts">
+    <span>Verified PASS on page: <strong>5</strong> / 50 studios</span>
+    <span>Still missing: 45</span>
+    <span>ZIP = PASS only</span>
+  </div>
 </header>
 <main class="grid">
     <figure class="card">
-      <a class="imgwrap" href="ui/ui__obscure-studio__fat-eddie.jpg" target="_blank" rel="noopener"><img loading="lazy" src="ui/ui__obscure-studio__fat-eddie.jpg" alt="Obscure Studio — Fat Eddie"/></a>
-      <figcaption><strong>Obscure Studio</strong><br/>Fat Eddie</figcaption>
+      <a class="imgwrap" href="ui/ui__obscure-studio__fat-eddie.jpg" target="_blank" rel="noopener">
+        <img loading="lazy" src="ui/ui__obscure-studio__fat-eddie.jpg" alt="Obscure Studio — Fat Eddie"/>
+      </a>
+      <figcaption><strong>Obscure Studio</strong><br/>Fat Eddie<br/><span class="ok">PASS · base UI</span></figcaption>
     </figure>
     <figure class="card">
-      <a class="imgwrap" href="ui/ui__very-rare__bone-circus.jpg" target="_blank" rel="noopener"><img loading="lazy" src="ui/ui__very-rare__bone-circus.jpg" alt="Very Rare — Bone Circus"/></a>
-      <figcaption><strong>Very Rare</strong><br/>Bone Circus</figcaption>
-    </figure></main>
+      <a class="imgwrap" href="ui/ui__very-rare__bone-circus.jpg" target="_blank" rel="noopener">
+        <img loading="lazy" src="ui/ui__very-rare__bone-circus.jpg" alt="Very Rare — Bone Circus"/>
+      </a>
+      <figcaption><strong>Very Rare</strong><br/>Bone Circus<br/><span class="ok">PASS · base UI</span></figcaption>
+    </figure>
+    <figure class="card">
+      <a class="imgwrap" href="ui/ui__gg-gaming__wrath-of-zeus.jpg" target="_blank" rel="noopener">
+        <img loading="lazy" src="ui/ui__gg-gaming__wrath-of-zeus.jpg" alt="GG Gaming — Deadly Outlaw"/>
+      </a>
+      <figcaption><strong>GG Gaming</strong><br/>Deadly Outlaw<br/><span class="ok">PASS · base UI (same-studio title)</span></figcaption>
+    </figure>
+    <figure class="card">
+      <a class="imgwrap" href="ui/ui__phantom-interactive__rats-to-riches.jpg" target="_blank" rel="noopener">
+        <img loading="lazy" src="ui/ui__phantom-interactive__rats-to-riches.jpg" alt="Phantom Interactive — Anubis Clusters"/>
+      </a>
+      <figcaption><strong>Phantom Interactive</strong><br/>Anubis Clusters<br/><span class="ok">PASS · base UI (same-studio title)</span></figcaption>
+    </figure>
+    <figure class="card">
+      <a class="imgwrap" href="ui/ui__pocket-play__octo-shop.jpg" target="_blank" rel="noopener">
+        <img loading="lazy" src="ui/ui__pocket-play__octo-shop.jpg" alt="Pocket Play — Battle Sharks"/>
+      </a>
+      <figcaption><strong>Pocket Play</strong><br/>Battle Sharks<br/><span class="ok">PASS · base UI (same-studio title)</span></figcaption>
+    </figure>
+</main>
+<section class="miss">
+  <div class="box">
+    <h2>Still capturing</h2>
+    <p>45 studios not yet on this page. Prior FAIL/WEAK shots (START Replay modals, free-spin splash, loading/error) are quarantined and not listed or zipped.</p>
+  </div>
+</section>
+<footer>Updated after visual Read-verify of each shot. Prefer quality over filling all 50.</footer>
 </body>
 </html>
